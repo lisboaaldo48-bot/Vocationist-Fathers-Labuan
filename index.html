@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocationist Fathers Indonesia</title>
+
+<style>
+body {
+font-family: 'Segoe UI', sans-serif;
+margin:0;
+background:#f4f6f9;
+}
+
+header {
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+color:white;
+text-align:center;
+padding:30px 20px;
+}
+
+.logo {
+width:90px;
+margin-bottom:10px;
+}
+
+h1 { margin:10px 0; }
+
+.container {
+max-width:800px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.gallery {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+margin-bottom:20px;
+}
+
+.gallery img {
+width:100%;
+border-radius:12px;
+object-fit:cover;
+}
+
+input, select, textarea {
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button {
+background:#25D366;
+color:white;
+padding:14px;
+border:none;
+border-radius:12px;
+margin-top:15px;
+width:100%;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover {
+background:#1ebe5d;
+}
+
+.footer {
+text-align:center;
+padding:15px;
+font-size:14px;
+color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Catholic_Church_logo.png" class="logo">
+<h1>Vocationist Fathers Indonesia</h1>
+<p>Panggilan untuk melayani Tuhan</p>
+</header>
+
+<div class="container">
+
+<!-- FOTO -->
+<div class="gallery">
+<img src="https://vocationistfathers.org/wp-content/uploads/2019/06/vocationist-priests.jpg">
+<img src="https://stnicholasrcchurch.org/wp-content/uploads/2017/08/vocationists.jpg">
+<img src="https://vocationistfathers.org/wp-content/uploads/2019/06/community.jpg">
+</div>
+
+<h2>Formulir Pendaftaran</h2>
+
+<form>
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+<input type="text" id="ttl" placeholder="Tempat, Tanggal Lahir" required>
+<input type="text" id="alamat" placeholder="Alamat Lengkap" required>
+<input type="text" id="paroki" placeholder="Paroki Asal" required>
+<input type="text" id="keuskupan" placeholder="Keuskupan" required>
+<input type="tel" id="hp" placeholder="Nomor WhatsApp" required>
+<input type="email" id="email" placeholder="Email" required>
+
+<select id="pendidikan" required>
+<option value="">Pendidikan Terakhir</option>
+<option>SMA / SMK</option>
+<option>Mahasiswa</option>
+<option>Lainnya</option>
+</select>
+
+<textarea id="motivasi" placeholder="Motivasi ingin menjadi imam" required></textarea>
+
+<button type="button" onclick="kirimWA()">Kirim ke WhatsApp</button>
+</form>
+</div>
+
+<div class="footer">
+© 2026 Vocationist Fathers Indonesia
+</div>
+
+<script>
+function kirimWA() {
+var nama = document.getElementById('nama').value;
+var ttl = document.getElementById('ttl').value;
+var alamat = document.getElementById('alamat').value;
+var paroki = document.getElementById('paroki').value;
+var keuskupan = document.getElementById('keuskupan').value;
+var hp = document.getElementById('hp').value;
+var email = document.getElementById('email').value;
+var pendidikan = document.getElementById('pendidikan').value;
+var motivasi = document.getElementById('motivasi').value;
+
+var nomorAdmin = '6281339867238';
+
+var pesan = `PENDAFTARAN VOCATIONIST FATHERS%0A%0A` +
+`Nama: ${nama}%0A` +
+`TTL: ${ttl}%0A` +
+`Alamat: ${alamat}%0A` +
+`Paroki: ${paroki}%0A` +
+`Keuskupan: ${keuskupan}%0A` +
+`HP: ${hp}%0A` +
+`Email: ${email}%0A` +
+`Pendidikan: ${pendidikan}%0A` +
+`Motivasi: ${motivasi}`;
+
+window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
+}
+</script>
+
+</body>
+</html>
