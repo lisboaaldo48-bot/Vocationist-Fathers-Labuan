@@ -9,9 +9,14 @@
 <meta name="google-site-verification" content="SYWpjJZpAjfjKeR5cD9Im3ZCYSQIvZA529Z_JPHeJBc" />
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin:0;
   font-family: Arial, sans-serif;
+  background:#f4f6f9;
 }
 
 /* HEADER */
@@ -19,11 +24,11 @@ body {
   background:#1e3a8a;
   color:white;
   text-align:center;
-  padding:20px;
+  padding:25px;
 }
 
 .header img {
-  width:80px;
+  width:90px;
 }
 
 /* NAVBAR */
@@ -54,31 +59,33 @@ body {
 /* CONTENT */
 .container {
   padding:20px;
+  max-width:900px;
+  margin:auto;
 }
 
 .card {
   background:white;
   padding:20px;
-  margin:15px 0;
-  border-radius:10px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  margin:20px 0;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* FORM */
 input, textarea {
   width:100%;
   padding:10px;
-  margin:5px 0 15px;
-  border-radius:5px;
+  margin:8px 0 15px;
+  border-radius:6px;
   border:1px solid #ccc;
 }
 
 button {
   background:#1e3a8a;
   color:white;
-  padding:10px;
+  padding:12px;
   border:none;
-  border-radius:5px;
+  border-radius:6px;
   cursor:pointer;
 }
 
@@ -134,9 +141,9 @@ function kirimWA() {
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <a href="#">Beranda</a>
-  <a href="#">Tentang</a>
-  <a href="#">Pendaftaran</a>
+  <a href="#home">Beranda</a>
+  <a href="#tentang">Tentang Kami</a>
+  <a href="#pendaftaran">Pendaftaran</a>
 </div>
 
 <!-- BANNER -->
@@ -144,15 +151,63 @@ function kirimWA() {
   <img src="vocationist.png">
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <div class="card">
-    <h3>Tentang Kami</h3>
-    <p>Vocationist Fathers adalah komunitas religius yang melayani panggilan hidup imamat dan bakti demi kemuliaan Tuhan.</p>
+  <!-- BERANDA -->
+  <div id="home" class="card">
+    <h2>Vocationist Fathers Indonesia</h2>
+
+    <p>
+      Vocationist Fathers adalah kongregasi religius dalam Gereja Katolik 
+      yang secara khusus melayani panggilan hidup imamat dan kehidupan bakti.
+    </p>
+
+    <p>
+      Kongregasi ini didirikan oleh <b>Santo Justinus Maria Russolillo</b>, 
+      seorang imam yang memiliki kerinduan besar untuk membantu kaum muda 
+      menemukan panggilan hidup mereka.
+    </p>
+
+    <p>
+      Dengan semangat doa, pelayanan, dan kasih, kami hadir untuk membina 
+      para calon imam agar menjadi pelayan Tuhan yang setia.
+    </p>
   </div>
 
+  <!-- PENDIRI -->
   <div class="card">
+    <h3>Pendiri Kongregasi</h3>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Justinus_Russolillo.jpg" 
+         width="200" style="border-radius:10px; display:block; margin:auto;">
+
+    <p style="margin-top:15px;">
+      Santo Justinus Maria Russolillo adalah pendiri Vocationist Fathers. 
+      Ia dikenal sebagai imam yang memiliki perhatian besar terhadap panggilan 
+      hidup bakti, khususnya bagi kaum muda yang ingin menjadi imam.
+    </p>
+  </div>
+
+  <!-- TENTANG -->
+  <div id="tentang" class="card">
+    <h3>Sejarah dan Kegiatan</h3>
+
+    <p>
+      Kongregasi Vocationist hadir untuk membantu Gereja dalam membina 
+      panggilan-panggilan baru melalui pendidikan, pembinaan rohani, 
+      dan pelayanan pastoral.
+    </p>
+
+    <ul>
+      <li>Pembinaan calon imam</li>
+      <li>Retret dan rekoleksi</li>
+      <li>Pelayanan pastoral umat</li>
+      <li>Pendampingan kaum muda</li>
+    </ul>
+  </div>
+
+  <!-- PENDAFTARAN -->
+  <div id="pendaftaran" class="card">
     <h3>Formulir Pendaftaran</h3>
 
     <input type="text" id="nama" placeholder="Nama Lengkap">
