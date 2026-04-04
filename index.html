@@ -1,163 +1,177 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vocationist Fathers Indonesia</title>
+
 <meta name="google-site-verification" content="SYWpjJZpAjfjKeR5cD9Im3ZCYSQIvZA529Z_JPHeJBc" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vocationist Fathers Indonesia</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vocationist Fathers Indonesia</title>
 
 <style>
 body {
-font-family: 'Segoe UI', sans-serif;
-margin:0;
-background:#f4f6f9;
+  margin:0;
+  font-family: Arial, sans-serif;
 }
 
-header {
-background:linear-gradient(135deg,#1e3a8a,#2563eb);
-color:white;
-text-align:center;
-padding:30px 20px;
+/* HEADER */
+.header {
+  background:#1e3a8a;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 
-.logo {
-width:90px;
-margin-bottom:10px;
+.header img {
+  width:80px;
 }
 
-h1 { margin:10px 0; }
+/* NAVBAR */
+.navbar {
+  display:flex;
+  justify-content:center;
+  background:#f7941d;
+}
 
+.navbar a {
+  padding:14px 20px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+
+.navbar a:hover {
+  background:#d97706;
+}
+
+/* BANNER */
+.banner img {
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+
+/* CONTENT */
 .container {
-max-width:800px;
-margin:30px auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  padding:20px;
 }
 
-.gallery {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
-margin-bottom:20px;
+.card {
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
-.gallery img {
-width:100%;
-border-radius:12px;
-object-fit:cover;
-}
-
-input, select, textarea {
-width:100%;
-padding:12px;
-margin-top:10px;
-border-radius:10px;
-border:1px solid #ccc;
+/* FORM */
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:5px 0 15px;
+  border-radius:5px;
+  border:1px solid #ccc;
 }
 
 button {
-background:#25D366;
-color:white;
-padding:14px;
-border:none;
-border-radius:12px;
-margin-top:15px;
-width:100%;
-font-size:16px;
-cursor:pointer;
+  background:#1e3a8a;
+  color:white;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
 }
 
 button:hover {
-background:#1ebe5d;
+  background:#2563eb;
 }
 
+/* FOOTER */
 .footer {
-text-align:center;
-padding:15px;
-font-size:14px;
-color:#777;
+  background:#1e3a8a;
+  color:white;
+  text-align:center;
+  padding:15px;
 }
 </style>
+
+<script>
+function kirimWA() {
+  var nama = document.getElementById('nama').value;
+  var ttl = document.getElementById('ttl').value;
+  var alamat = document.getElementById('alamat').value;
+  var hp = document.getElementById('hp').value;
+  var email = document.getElementById('email').value;
+  var pendidikan = document.getElementById('pendidikan').value;
+  var motivasi = document.getElementById('motivasi').value;
+
+  var nomor = "6281339867238";
+
+  var pesan = "PENDAFTARAN VOCATIONIST\n\n"
+    + "Nama: " + nama + "\n"
+    + "TTL: " + ttl + "\n"
+    + "Alamat: " + alamat + "\n"
+    + "HP: " + hp + "\n"
+    + "Email: " + email + "\n"
+    + "Pendidikan: " + pendidikan + "\n"
+    + "Motivasi: " + motivasi;
+
+  var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+  window.open(url, '_blank');
+}
+</script>
+
 </head>
 
 <body>
 
-<header>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Catholic_Church_logo.png" class="logo">
-<h1>Vocationist Fathers Indonesia</h1>
-<p>Panggilan untuk melayani Tuhan</p>
-</header>
+<!-- HEADER -->
+<div class="header">
+  <img src="sdv.png">
+  <h2>Vocationist Fathers Indonesia</h2>
+  <p>Panggilan untuk melayani Tuhan</p>
+</div>
 
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#">Beranda</a>
+  <a href="#">Tentang</a>
+  <a href="#">Pendaftaran</a>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <img src="vocationist.png">
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-<!-- FOTO -->
-<div class="gallery">
-<img src="https://vocationistfathers.org/wp-content/uploads/2019/06/vocationist-priests.jpg">
-<img src="https://stnicholasrcchurch.org/wp-content/uploads/2017/08/vocationists.jpg">
-<img src="https://vocationistfathers.org/wp-content/uploads/2019/06/community.jpg">
+  <div class="card">
+    <h3>Tentang Kami</h3>
+    <p>Vocationist Fathers adalah komunitas religius yang melayani panggilan hidup imamat dan bakti demi kemuliaan Tuhan.</p>
+  </div>
+
+  <div class="card">
+    <h3>Formulir Pendaftaran</h3>
+
+    <input type="text" id="nama" placeholder="Nama Lengkap">
+    <input type="text" id="ttl" placeholder="Tempat/Tanggal Lahir">
+    <input type="text" id="alamat" placeholder="Alamat">
+    <input type="text" id="hp" placeholder="Nomor HP">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="pendidikan" placeholder="Pendidikan Terakhir">
+    <textarea id="motivasi" placeholder="Motivasi"></textarea>
+
+    <button onclick="kirimWA()">Kirim ke WhatsApp</button>
+  </div>
+
 </div>
 
-<h2>Formulir Pendaftaran</h2>
-
-<form>
-<input type="text" id="nama" placeholder="Nama Lengkap" required>
-<input type="text" id="ttl" placeholder="Tempat, Tanggal Lahir" required>
-<input type="text" id="alamat" placeholder="Alamat Lengkap" required>
-<input type="text" id="paroki" placeholder="Paroki Asal" required>
-<input type="text" id="keuskupan" placeholder="Keuskupan" required>
-<input type="tel" id="hp" placeholder="Nomor WhatsApp" required>
-<input type="email" id="email" placeholder="Email" required>
-
-<select id="pendidikan" required>
-<option value="">Pendidikan Terakhir</option>
-<option>SMA / SMK</option>
-<option>Mahasiswa</option>
-<option>Lainnya</option>
-</select>
-
-<textarea id="motivasi" placeholder="Motivasi ingin menjadi imam" required></textarea>
-
-<button type="button" onclick="kirimWA()">Kirim ke WhatsApp</button>
-</form>
-</div>
-
+<!-- FOOTER -->
 <div class="footer">
-© 2026 Vocationist Fathers Indonesia
+  © 2026 Vocationist Fathers Indonesia
 </div>
-
-<script>
-function kirimWA() {
-var nama = document.getElementById('nama').value;
-var ttl = document.getElementById('ttl').value;
-var alamat = document.getElementById('alamat').value;
-var paroki = document.getElementById('paroki').value;
-var keuskupan = document.getElementById('keuskupan').value;
-var hp = document.getElementById('hp').value;
-var email = document.getElementById('email').value;
-var pendidikan = document.getElementById('pendidikan').value;
-var motivasi = document.getElementById('motivasi').value;
-
-var nomorAdmin = '6281339867238';
-
-var pesan = `PENDAFTARAN VOCATIONIST FATHERS%0A%0A` +
-`Nama: ${nama}%0A` +
-`TTL: ${ttl}%0A` +
-`Alamat: ${alamat}%0A` +
-`Paroki: ${paroki}%0A` +
-`Keuskupan: ${keuskupan}%0A` +
-`HP: ${hp}%0A` +
-`Email: ${email}%0A` +
-`Pendidikan: ${pendidikan}%0A` +
-`Motivasi: ${motivasi}`;
-
-window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
-}
-</script>
 
 </body>
 </html>
