@@ -3,252 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vocationist Fathers Indonesia</title>
 
-<meta name="google-site-verification" content="SYWpjJZpAjfjKeR5cD9Im3ZCYSQIvZA529Z_JPHeJBc" />
-<meta name="description" content="Pendaftaran calon imam Vocationist Fathers Indonesia">
-
 <style>
-html { scroll-behavior:smooth; }
-
 body {
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+header img {
+  width:80px;
 }
 
 /* NAVBAR */
-.navbar {
-  position:fixed;
-  width:100%;
-  top:0;
+nav {
+  background:#fbc02d;
   display:flex;
   justify-content:center;
-  background:rgba(0,0,0,0.5);
-  z-index:1000;
 }
 
-.navbar a {
-  color:white;
+nav a {
   padding:15px;
   text-decoration:none;
+  color:black;
   font-weight:bold;
 }
 
-.navbar a:hover { color:orange; }
+nav a:hover {
+  background:#ffeb3b;
+}
 
 /* SLIDER */
 .slider {
-  height:100vh;
   position:relative;
+  height:400px;
+  overflow:hidden;
 }
 
 .slide {
   position:absolute;
   width:100%;
   height:100%;
-  opacity:0;
-  transition:1s;
+  background-size:cover;
+  background-position:center;
+  animation:slide 15s infinite;
 }
 
-.slide.active { opacity:1; }
+.slide:nth-child(1){background-image:url('sdv.png');}
+.slide:nth-child(2){background-image:url('vocationist.png'); animation-delay:5s;}
+.slide:nth-child(3){background-image:url('sdv.png'); animation-delay:10s;}
 
-.slide img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+@keyframes slide {
+  0%{opacity:0;}
+  10%{opacity:1;}
+  30%{opacity:1;}
+  40%{opacity:0;}
+  100%{opacity:0;}
 }
 
-.caption {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  color:white;
-  text-align:center;
-  background:rgba(0,0,0,0.5);
-  padding:20px;
-  border-radius:10px;
-}
-
-.caption h1 { font-size:40px; }
-
-/* CONTENT */
-.container {
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-
-.card {
-  background:white;
-  padding:20px;
-  margin:20px 0;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  animation:fadeIn 1s;
-}
-
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
+/* SECTION */
+section {
+  padding:40px;
 }
 
 /* GRID */
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:2fr 1fr;
   gap:20px;
+}
+
+/* CARD */
+.card {
+  background:#f5f5f5;
+  padding:20px;
+  border-radius:10px;
 }
 
 /* FORM */
 input, textarea {
   width:100%;
   padding:10px;
-  margin:8px 0;
+  margin:5px 0;
 }
 
 button {
-  background:#1e3a8a;
+  background:#1976d2;
   color:white;
-  padding:12px;
   border:none;
+  padding:10px;
+  cursor:pointer;
 }
 
 /* FOOTER */
-.footer {
-  background:#1e3a8a;
+footer {
+  background:#0d47a1;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:20px;
 }
 </style>
-
-<script>
-function kirimWA(){
-var nama=document.getElementById('nama').value;
-var ttl=document.getElementById('ttl').value;
-var alamat=document.getElementById('alamat').value;
-var hp=document.getElementById('hp').value;
-var email=document.getElementById('email').value;
-var pendidikan=document.getElementById('pendidikan').value;
-var motivasi=document.getElementById('motivasi').value;
-
-var url="https://wa.me/6281339867238?text="+encodeURIComponent(
-"Nama: "+nama+"\nTTL: "+ttl+"\nAlamat: "+alamat+"\nHP: "+hp+"\nEmail: "+email+"\nPendidikan: "+pendidikan+"\nMotivasi: "+motivasi
-);
-
-window.open(url,'_blank');
-}
-</script>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <a href="#home">Beranda</a>
+<header>
+  <img src="sdv.png">
+  <h1>Vocationist Fathers Indonesia</h1>
+  <p>Panggilan untuk Melayani Tuhan dan Gereja</p>
+</header>
+
+<nav>
+  <a href="#beranda">Beranda</a>
   <a href="#tentang">Tentang</a>
   <a href="#formasi">Formasi</a>
-  <a href="#pendaftaran">Pendaftaran</a>
-</div>
+  <a href="#video">Video</a>
+  <a href="#daftar">Pendaftaran</a>
+</nav>
 
-<!-- SLIDER FULLSCREEN -->
+<!-- SLIDER -->
 <div class="slider">
-  <div class="slide active">
-    <img src="vocationist.png">
-    <div class="caption">
-      <h1>Vocationist Fathers Indonesia</h1>
-      <p>Panggilan untuk melayani Tuhan</p>
-    </div>
-  </div>
-
-  <div class="slide">
-    <img src="sdv.png">
-    <div class="caption">
-      <h1>Temukan Panggilan Hidupmu</h1>
-      <p>Bergabunglah bersama kami</p>
-    </div>
-  </div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
 </div>
-
-<div class="container">
 
 <!-- BERANDA -->
-<div id="home" class="card">
-  <h2>Vocationist Fathers Indonesia</h2>
-  <p>Kongregasi religius yang melayani panggilan hidup imamat.</p>
-  <p>Didirikan oleh Santo Justinus Maria Russolillo.</p>
-</div>
+<section id="beranda">
+  <div class="grid">
+    <div class="card">
+      <h2>Sejarah Kongregasi</h2>
+      <p>
+        Kongregasi Vocationist didirikan oleh <b>Santo Yustinus Maria Russolillo</b>.
+        Kongregasi ini berfokus pada panggilan hidup religius dan imamat.
+      </p>
+    </div>
 
-<!-- PENDIRI -->
-<div class="card">
-  <h3>Pendiri</h3>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Justinus_Russolillo.jpg" width="200">
-  <p>Santo Justinus Maria Russolillo adalah pendiri kongregasi ini.</p>
-</div>
+    <div class="card">
+      <h3>Berita Terbaru</h3>
+      <p>- Kegiatan seminar panggilan</p>
+      <p>- Retret calon imam</p>
+    </div>
+  </div>
+</section>
 
 <!-- TENTANG -->
-<div id="tentang" class="card">
-  <h3>Kegiatan</h3>
-  <ul>
-    <li>Pembinaan calon imam</li>
-    <li>Retret</li>
-    <li>Pelayanan pastoral</li>
-  </ul>
-</div>
+<section id="tentang">
+  <h2>Tentang Kami</h2>
+  <p>
+    Kami adalah komunitas religius yang melayani Gereja melalui pembinaan panggilan.
+  </p>
+</section>
 
 <!-- FORMASI -->
-<div id="formasi" class="card">
+<section id="formasi">
   <h2>Rumah Formasi</h2>
-  <div class="grid">
-    <div class="card"><h4>KPA Labuan Bajo</h4></div>
-    <div class="card"><h4>Formasi Filsafat</h4></div>
-    <div class="card"><h4>Teologi Maumere</h4></div>
-    <div class="card"><h4>Novisiat Ruteng</h4></div>
-  </div>
-</div>
+  <ul>
+    <li>KPA - Labuan Bajo</li>
+    <li>Aspirant - Maumere</li>
+    <li>Discipleship - Maumere</li>
+    <li>Apprenticeship - Maumere</li>
+    <li>Postulan + Filsafat - Maumere</li>
+    <li>Teologi - Maumere</li>
+    <li>Novisiat - Ruteng</li>
+  </ul>
+</section>
 
 <!-- VIDEO -->
-<div class="card">
-  <h3>Video</h3>
-  <iframe width="100%" height="400" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
-</div>
-
-<!-- GALERI -->
-<div class="card">
-  <h3>Galeri</h3>
-  <img src="vocationist.png" width="100%">
-</div>
+<section id="video">
+  <h2>Video Kegiatan</h2>
+  <iframe width="100%" height="400"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+  </iframe>
+</section>
 
 <!-- PENDAFTARAN -->
-<div id="pendaftaran" class="card">
-  <h3>Pendaftaran</h3>
+<section id="daftar">
+  <h2>Formulir Pendaftaran</h2>
+
   <input id="nama" placeholder="Nama">
-  <input id="ttl" placeholder="TTL">
+  <input id="ttl" placeholder="Tempat/Tanggal Lahir">
   <input id="alamat" placeholder="Alamat">
-  <input id="hp" placeholder="HP">
+  <input id="paroki" placeholder="Paroki">
+  <input id="keuskupan" placeholder="Keuskupan">
+  <input id="hp" placeholder="No HP">
   <input id="email" placeholder="Email">
-  <input id="pendidikan" placeholder="Pendidikan">
   <textarea id="motivasi" placeholder="Motivasi"></textarea>
-  <button onclick="kirimWA()">Kirim</button>
-</div>
 
-</div>
+  <button onclick="kirimWA()">Kirim via WhatsApp</button>
+</section>
 
-<div class="footer">
-© 2026 Vocationist Fathers Indonesia
-</div>
+<footer>
+  © 2026 Vocationist Fathers Indonesia
+</footer>
 
 <script>
-let slides=document.querySelectorAll('.slide');
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove('active');
-i=(i+1)%slides.length;
-slides[i].classList.add('active');
-},4000);
+function kirimWA() {
+  var nama = document.getElementById('nama').value;
+  var hp = document.getElementById('hp').value;
+
+  var pesan = "PENDAFTARAN VOCATIONIST%0A" +
+              "Nama: " + nama + "%0A" +
+              "HP: " + hp;
+
+  var nomor = "6281339867238";
+
+  window.open("https://wa.me/" + nomor + "?text=" + pesan);
+}
 </script>
 
 </body>
