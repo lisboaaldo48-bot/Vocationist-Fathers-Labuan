@@ -7,49 +7,71 @@
 <title>Vocationist Fathers Indonesia</title>
 
 <meta name="google-site-verification" content="SYWpjJZpAjfjKeR5cD9Im3ZCYSQIvZA529Z_JPHeJBc" />
-<meta name="description" content="Pendaftaran calon imam Vocationist Fathers Indonesia. Pembinaan panggilan hidup bakti dan imamat.">
+<meta name="description" content="Pendaftaran calon imam Vocationist Fathers Indonesia">
 
 <style>
-html { scroll-behavior: smooth; }
+html { scroll-behavior:smooth; }
 
 body {
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#f4f6f9;
+  font-family:Arial, sans-serif;
 }
-
-/* HEADER */
-.header {
-  background:#1e3a8a;
-  color:white;
-  text-align:center;
-  padding:25px;
-}
-
-.header img { width:90px; }
 
 /* NAVBAR */
 .navbar {
+  position:fixed;
+  width:100%;
+  top:0;
   display:flex;
   justify-content:center;
-  background:#f7941d;
+  background:rgba(0,0,0,0.5);
+  z-index:1000;
 }
 
 .navbar a {
-  padding:14px 20px;
-  text-decoration:none;
   color:white;
+  padding:15px;
+  text-decoration:none;
   font-weight:bold;
 }
 
-.navbar a:hover { background:#d97706; }
+.navbar a:hover { color:orange; }
 
-/* BANNER */
-.banner img {
+/* SLIDER */
+.slider {
+  height:100vh;
+  position:relative;
+}
+
+.slide {
+  position:absolute;
   width:100%;
-  height:400px;
+  height:100%;
+  opacity:0;
+  transition:1s;
+}
+
+.slide.active { opacity:1; }
+
+.slide img {
+  width:100%;
+  height:100%;
   object-fit:cover;
 }
+
+.caption {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
+  text-align:center;
+  background:rgba(0,0,0,0.5);
+  padding:20px;
+  border-radius:10px;
+}
+
+.caption h1 { font-size:40px; }
 
 /* CONTENT */
 .container {
@@ -64,12 +86,18 @@ body {
   margin:20px 0;
   border-radius:12px;
   box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  animation:fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 /* GRID */
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 
@@ -78,8 +106,6 @@ input, textarea {
   width:100%;
   padding:10px;
   margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
 }
 
 button {
@@ -87,11 +113,7 @@ button {
   color:white;
   padding:12px;
   border:none;
-  border-radius:6px;
-  cursor:pointer;
 }
-
-button:hover { background:#2563eb; }
 
 /* FOOTER */
 .footer {
@@ -103,41 +125,26 @@ button:hover { background:#2563eb; }
 </style>
 
 <script>
-function kirimWA() {
-  var nama = document.getElementById('nama').value;
-  var ttl = document.getElementById('ttl').value;
-  var alamat = document.getElementById('alamat').value;
-  var hp = document.getElementById('hp').value;
-  var email = document.getElementById('email').value;
-  var pendidikan = document.getElementById('pendidikan').value;
-  var motivasi = document.getElementById('motivasi').value;
+function kirimWA(){
+var nama=document.getElementById('nama').value;
+var ttl=document.getElementById('ttl').value;
+var alamat=document.getElementById('alamat').value;
+var hp=document.getElementById('hp').value;
+var email=document.getElementById('email').value;
+var pendidikan=document.getElementById('pendidikan').value;
+var motivasi=document.getElementById('motivasi').value;
 
-  var nomor = "6281339867238";
+var url="https://wa.me/6281339867238?text="+encodeURIComponent(
+"Nama: "+nama+"\nTTL: "+ttl+"\nAlamat: "+alamat+"\nHP: "+hp+"\nEmail: "+email+"\nPendidikan: "+pendidikan+"\nMotivasi: "+motivasi
+);
 
-  var pesan = "PENDAFTARAN VOCATIONIST\n\n"
-    + "Nama: " + nama + "\n"
-    + "TTL: " + ttl + "\n"
-    + "Alamat: " + alamat + "\n"
-    + "HP: " + hp + "\n"
-    + "Email: " + email + "\n"
-    + "Pendidikan: " + pendidikan + "\n"
-    + "Motivasi: " + motivasi;
-
-  var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
-  window.open(url, '_blank');
+window.open(url,'_blank');
 }
 </script>
 
 </head>
 
 <body>
-
-<!-- HEADER -->
-<div class="header">
-  <img src="sdv.png">
-  <h2>Vocationist Fathers Indonesia</h2>
-  <p>Panggilan untuk melayani Tuhan</p>
-</div>
 
 <!-- NAVBAR -->
 <div class="navbar">
@@ -147,9 +154,23 @@ function kirimWA() {
   <a href="#pendaftaran">Pendaftaran</a>
 </div>
 
-<!-- BANNER -->
-<div class="banner">
-  <img src="vocationist.png">
+<!-- SLIDER FULLSCREEN -->
+<div class="slider">
+  <div class="slide active">
+    <img src="vocationist.png">
+    <div class="caption">
+      <h1>Vocationist Fathers Indonesia</h1>
+      <p>Panggilan untuk melayani Tuhan</p>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="sdv.png">
+    <div class="caption">
+      <h1>Temukan Panggilan Hidupmu</h1>
+      <p>Bergabunglah bersama kami</p>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -157,107 +178,78 @@ function kirimWA() {
 <!-- BERANDA -->
 <div id="home" class="card">
   <h2>Vocationist Fathers Indonesia</h2>
-  <p>
-    Vocationist Fathers adalah kongregasi religius dalam Gereja Katolik yang melayani
-    panggilan hidup imamat dan kehidupan bakti.
-  </p>
-  <p>
-    Kongregasi ini didirikan oleh <b>Santo Justinus Maria Russolillo</b>,
-    yang memiliki kerinduan besar membantu kaum muda menemukan panggilan hidup mereka.
-  </p>
+  <p>Kongregasi religius yang melayani panggilan hidup imamat.</p>
+  <p>Didirikan oleh Santo Justinus Maria Russolillo.</p>
 </div>
 
 <!-- PENDIRI -->
 <div class="card">
-  <h3>Pendiri Kongregasi</h3>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Justinus_Russolillo.jpg" width="200" style="display:block;margin:auto;border-radius:10px;">
-  <p style="margin-top:15px;">
-    Santo Justinus Maria Russolillo dikenal sebagai imam yang memiliki perhatian besar
-    terhadap panggilan hidup bakti dan pembinaan calon imam.
-  </p>
+  <h3>Pendiri</h3>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Justinus_Russolillo.jpg" width="200">
+  <p>Santo Justinus Maria Russolillo adalah pendiri kongregasi ini.</p>
 </div>
 
 <!-- TENTANG -->
 <div id="tentang" class="card">
-  <h3>Kegiatan Kami</h3>
+  <h3>Kegiatan</h3>
   <ul>
     <li>Pembinaan calon imam</li>
-    <li>Retret dan rekoleksi</li>
+    <li>Retret</li>
     <li>Pelayanan pastoral</li>
-    <li>Pendampingan kaum muda</li>
   </ul>
 </div>
 
 <!-- FORMASI -->
 <div id="formasi" class="card">
-  <h2 style="text-align:center;">Rumah Formasi</h2>
-
+  <h2>Rumah Formasi</h2>
   <div class="grid">
-
-    <div class="card">
-      <img src="vocationist.png" style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
-      <h4>KPA – Labuan Bajo</h4>
-      <p>Kelas Persiapan Awal untuk mengenal panggilan.</p>
-    </div>
-
-    <div class="card">
-      <img src="vocationist.png" style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
-      <h4>Rumah Formasi</h4>
-      <p>Aspirant, Discipleship, Apprenticeship, Postulan (studi filsafat).</p>
-    </div>
-
-    <div class="card">
-      <img src="vocationist.png" style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
-      <h4>Teologi – Maumere</h4>
-      <p>Studi teologi menuju tahbisan imam.</p>
-    </div>
-
-    <div class="card">
-      <img src="vocationist.png" style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
-      <h4>Novisiat – Ruteng</h4>
-      <p>Pembinaan hidup religius dan kaul.</p>
-    </div>
-
+    <div class="card"><h4>KPA Labuan Bajo</h4></div>
+    <div class="card"><h4>Formasi Filsafat</h4></div>
+    <div class="card"><h4>Teologi Maumere</h4></div>
+    <div class="card"><h4>Novisiat Ruteng</h4></div>
   </div>
 </div>
 
 <!-- VIDEO -->
 <div class="card">
-  <h3>Video Panggilan</h3>
-  <iframe width="100%" height="400"
-    src="https://www.youtube.com/embed/VIDEO_ID"
-    frameborder="0" allowfullscreen>
-  </iframe>
+  <h3>Video</h3>
+  <iframe width="100%" height="400" src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
 </div>
 
 <!-- GALERI -->
 <div class="card">
   <h3>Galeri</h3>
-  <img src="vocationist.png" width="100%" style="border-radius:10px;margin-bottom:10px;">
-  <img src="sdv.png" width="100%" style="border-radius:10px;">
+  <img src="vocationist.png" width="100%">
 </div>
 
 <!-- PENDAFTARAN -->
 <div id="pendaftaran" class="card">
-  <h3>Formulir Pendaftaran</h3>
-
-  <input type="text" id="nama" placeholder="Nama Lengkap">
-  <input type="text" id="ttl" placeholder="Tempat/Tanggal Lahir">
-  <input type="text" id="alamat" placeholder="Alamat">
-  <input type="text" id="hp" placeholder="Nomor HP">
-  <input type="email" id="email" placeholder="Email">
-  <input type="text" id="pendidikan" placeholder="Pendidikan">
+  <h3>Pendaftaran</h3>
+  <input id="nama" placeholder="Nama">
+  <input id="ttl" placeholder="TTL">
+  <input id="alamat" placeholder="Alamat">
+  <input id="hp" placeholder="HP">
+  <input id="email" placeholder="Email">
+  <input id="pendidikan" placeholder="Pendidikan">
   <textarea id="motivasi" placeholder="Motivasi"></textarea>
-
-  <button onclick="kirimWA()">Kirim ke WhatsApp</button>
+  <button onclick="kirimWA()">Kirim</button>
 </div>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-  © 2026 Vocationist Fathers Indonesia
+© 2026 Vocationist Fathers Indonesia
 </div>
+
+<script>
+let slides=document.querySelectorAll('.slide');
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},4000);
+</script>
 
 </body>
 </html>
