@@ -6,72 +6,114 @@
 <title>Vocationist Fathers Indonesia</title>
 
 <style>
-body {margin:0; font-family:Arial;}
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background:#f4f6f9;
+}
 
 /* HEADER */
 header {
-  background:#0d47a1;
-  color:white;
+  position:absolute;
+  width:100%;
+  z-index:10;
   text-align:center;
+  color:white;
   padding:20px;
 }
 
 /* NAVBAR */
 nav {
-  background:#fbc02d;
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   display:flex;
   justify-content:center;
+  z-index:20;
 }
 
 nav a {
-  padding:15px;
+  padding:15px 20px;
+  color:white;
   text-decoration:none;
-  color:black;
   font-weight:bold;
-  cursor:pointer;
+  transition:0.3s;
 }
 
-nav a:hover {background:#ffeb3b;}
+nav a:hover {
+  color:#ffd54f;
+}
 
-/* SLIDER */
+/* SLIDER FULL */
 .slider {
-  height:300px;
+  height:100vh;
   background:url('sdv.png') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+}
+
+.slider h1 {
+  font-size:50px;
+  margin:0;
+}
+
+.slider p {
+  font-size:20px;
 }
 
 /* SECTION */
 .section {
   display:none;
-  padding:30px;
+  padding:60px 20px;
 }
 
 .active {display:block;}
 
 .container {
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
 }
 
 /* CARD */
 .card {
-  background:#f5f5f5;
-  padding:20px;
-  border-radius:10px;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
   margin-bottom:20px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
 }
 
 /* FORM */
 input, textarea {
   width:100%;
-  padding:10px;
-  margin:5px 0;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
 }
 
 button {
-  background:#1976d2;
+  background:#0d47a1;
   color:white;
   border:none;
-  padding:10px;
+  padding:12px;
+  width:100%;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover {
+  background:#1565c0;
 }
 
 /* FOOTER */
@@ -87,11 +129,6 @@ footer {
 
 <body>
 
-<header>
-<h1>Vocationist Fathers Indonesia</h1>
-<p>Panggilan untuk Melayani Tuhan</p>
-</header>
-
 <nav>
 <a onclick="showPage('home')">Beranda</a>
 <a onclick="showPage('tentang')">Tentang</a>
@@ -100,7 +137,13 @@ footer {
 <a onclick="showPage('daftar')">Pendaftaran</a>
 </nav>
 
-<div class="slider"></div>
+<!-- HERO -->
+<div class="slider">
+  <div>
+    <h1>Vocationist Fathers</h1>
+    <p>Panggilan untuk Melayani Tuhan</p>
+  </div>
+</div>
 
 <div class="container">
 
@@ -126,8 +169,8 @@ footer {
   <div class="card">
     <h2>Tentang Kami</h2>
     <p>
-      Vocationist Fathers adalah kongregasi religius yang membina kaum muda
-      untuk menemukan panggilan hidup mereka.
+      Kami adalah komunitas religius yang membina kaum muda
+      untuk mengikuti panggilan Tuhan.
     </p>
   </div>
 </div>
