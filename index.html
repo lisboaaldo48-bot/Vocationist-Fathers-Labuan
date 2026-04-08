@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vocationist Fathers Indonesia</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
@@ -19,14 +17,12 @@ color:white;
 /* NAVBAR */
 nav{
 position:fixed;
-top:0;
 width:100%;
 background:rgba(0,0,0,0.8);
 padding:15px;
 text-align:center;
 z-index:999;
 }
-
 nav a{
 color:white;
 margin:15px;
@@ -48,8 +44,8 @@ animation:slide 20s infinite;
 
 @keyframes slide{
 0%{background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334');}
-33%{background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');}
-66%{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba');}
+33%{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba');}
+66%{background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');}
 100%{background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334');}
 }
 
@@ -60,6 +56,7 @@ padding:20px;
 border-radius:10px;
 }
 
+/* SECTION */
 section{
 padding:100px 20px;
 background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
@@ -75,94 +72,47 @@ padding:30px;
 border-radius:12px;
 max-width:1000px;
 margin:auto;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 /* TIMELINE */
 .timeline{
-position:relative;
-max-width:1000px;
-margin:auto;
+border-left:4px solid gold;
+padding-left:20px;
 }
-
-.timeline::after{
-content:'';
-position:absolute;
-width:4px;
-background:#ffc107;
-top:0;
-bottom:0;
-left:50%;
-margin-left:-2px;
-}
-
-.container{
-padding:20px;
-position:relative;
-width:50%;
-}
-
-.container.left{left:0;}
-.container.right{left:50%;}
-
-.content{
-background:white;
-color:black;
-padding:20px;
-border-radius:10px;
-}
-
-.container::before{
-content:'';
-position:absolute;
-width:25px;
-height:25px;
-right:-13px;
-background:#ffc107;
-border-radius:50%;
-top:15px;
-}
-
-.right::before{
-left:-13px;
-}
-
-/* ICON */
-.icon{
-font-size:30px;
+.timeline div{
+margin-bottom:15px;
+font-weight:500;
 }
 
 /* FORM */
-input, textarea{
+input,textarea{
 width:100%;
 padding:10px;
 margin:10px 0;
 }
-
 button{
 padding:12px;
-width:100%;
 background:#004aad;
 color:white;
 border:none;
+width:100%;
 }
 
 /* ANIMASI */
 .fade{
 animation:fadeIn 1.5s;
 }
-
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(30px);}
 to{opacity:1; transform:translateY(0);}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
 <a href="#beranda">Beranda</a>
 <a href="#tentang">Tentang</a>
@@ -179,14 +129,34 @@ to{opacity:1; transform:translateY(0);}
 <section id="tentang">
 <div class="card fade">
 
-<h2>Tentang Kongregasi</h2>
+<h2>Sejarah Kongregasi Vocationist</h2>
 
 <p>
-Biara Vocationist (Societas Divinarum Vocationum) didirikan oleh Santo Justinus Maria Russolillo di Italia tahun 1920.
+Biara Vocationist (Societas Divinarum Vocationum) memiliki sejarah yang berakar pada awal abad ke-20 di Italia. Kongregasi ini didirikan untuk membina panggilan religius, khususnya bagi mereka yang kurang mampu secara ekonomi.
+</p>
+
+<h3>Pendiri: Santo Justinus Maria Russolillo</h3>
+<p>
+Didirikan oleh Santo Justinus Russolillo (1891–1955), seorang imam dari Napoli. Ia memiliki perhatian besar terhadap kaum muda yang terpanggil menjadi imam namun tidak memiliki biaya.
 </p>
 
 <p>
-Misi utama kongregasi ini adalah membantu setiap orang menemukan panggilan hidupnya dari Tuhan.
+Pada 20 September 1920, ia mendirikan komunitas pertama. Ia dikanonisasi pada tahun 2022.
+</p>
+
+<h3>Visi Vocationarium</h3>
+<p>
+Tempat pembinaan untuk membantu orang menemukan panggilan hidupnya, baik sebagai imam, biarawan, maupun awam.
+</p>
+
+<h3>Pengakuan Gereja</h3>
+<p>
+Disetujui tahun 1927 dan mendapat pengakuan Paus Pius XII pada 3 Januari 1948.
+</p>
+
+<h3>Kehadiran di Indonesia</h3>
+<p>
+Kongregasi ini hadir di Indonesia dan melayani melalui paroki, pembinaan kaum muda, serta pendidikan.
 </p>
 
 <p><b>"Ego Volo Te Beatum"</b></p>
@@ -198,52 +168,47 @@ Misi utama kongregasi ini adalah membantu setiap orang menemukan panggilan hidup
 <section id="formasi">
 
 <div class="card">
-<h2 style="text-align:center;">Tahapan Formasi Imam</h2>
+<h2 style="text-align:center;">Tahapan Formasi Calon Imam</h2>
+
+<p>
+Proses pendidikan dan pembinaan untuk menjadi seorang Imam merupakan perjalanan panjang yang melibatkan pertumbuhan manusiawi, spiritual, intelektual, dan pastoral.
+</p>
+
 </div>
+
+<div class="card">
+<h3>Timeline Formasi</h3>
 
 <div class="timeline">
-
-<div class="container left">
-<div class="content">
-<div class="icon">👣</div>
-<h3>1. Tahap Awal</h3>
-<p>KPA, Aspiran, Apprenticeship, Discipleship</p>
-</div>
-</div>
-
-<div class="container right">
-<div class="content">
-<div class="icon">🙏</div>
-<h3>2. Formasi Dasar</h3>
-<p>Postulan & Novisiat (Kaul Pertama)</p>
-</div>
-</div>
-
-<div class="container left">
-<div class="content">
-<div class="icon">📖</div>
-<h3>3. Studi & Pastoral</h3>
-<p>Filsafat, Teologi, Pelayanan Umat</p>
-</div>
-</div>
-
-<div class="container right">
-<div class="content">
-<div class="icon">⛪</div>
-<h3>4. Tahbisan</h3>
-<p>Diakon → Imam</p>
-</div>
+<div>👣 1. Tahap Awal – KPA, Aspiran, Apprenticeship, Discipleship</div>
+<div>🙏 2. Formasi Dasar – Postulan & Novisiat</div>
+<div>📖 3. Studi & Pastoral – Filsafat, Teologi</div>
+<div>⛪ 4. Tahbisan – Diakon & Imam</div>
 </div>
 
 </div>
 
 <div class="card">
+
 <h3>Penjelasan Lengkap</h3>
 
-<p><b>Tahap Awal:</b> Adaptasi, pembinaan awal, dan pengenalan hidup religius.</p>
-<p><b>Formasi Dasar:</b> Pendalaman hidup rohani dan kaul religius.</p>
-<p><b>Formasi Lanjut:</b> Studi filsafat, teologi, dan pelayanan pastoral.</p>
-<p><b>Tahbisan:</b> Menjadi Diakon dan akhirnya Imam.</p>
+<h4>1. Tahap Awal</h4>
+<p>KPA: adaptasi hidup bersama dan disiplin.</p>
+<p>Aspiran: mulai mendalami panggilan.</p>
+<p>Apprenticeship: belajar kehidupan biara secara langsung.</p>
+<p>Discipleship: pendampingan menjadi murid Kristus.</p>
+
+<h4>2. Formasi Dasar</h4>
+<p>Postulan: persiapan hidup religius.</p>
+<p>Novisiat: pendalaman hidup rohani dan kaul pertama.</p>
+
+<h4>3. Formasi Lanjut</h4>
+<p>Studi Teologi: memahami Kitab Suci dan ajaran Gereja.</p>
+<p>Pastoral: pelayanan langsung kepada umat.</p>
+
+<h4>4. Tahbisan</h4>
+<p>Diakon: tahap awal pelayanan sakramental.</p>
+<p>Imam: puncak panggilan untuk melayani umat.</p>
 
 </div>
 
@@ -255,8 +220,8 @@ Misi utama kongregasi ini adalah membantu setiap orang menemukan panggilan hidup
 
 <h2>Pendaftaran</h2>
 
-<input type="text" placeholder="Nama">
-<input type="text" placeholder="No HP">
+<input placeholder="Nama">
+<input placeholder="No HP">
 <textarea placeholder="Motivasi"></textarea>
 
 <button>Kirim</button>
