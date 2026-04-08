@@ -32,28 +32,50 @@ nav a {
   cursor:pointer;
   font-weight:600;
 }
+<!-- SLIDER -->
+<div class="slider" id="home">
 
-/* SLIDER */
-.slider {
-  position:relative;
-  height:100vh;
-  overflow:hidden;
-}
+  <!-- SLIDE 1: IMAM -->
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1600431521340-491eca880813');">
+    <div class="overlay">
+      <div class="content">
+        <h1>Menjadi Imam</h1>
+        <p>Melayani Tuhan dan Umat-Nya</p>
+      </div>
+    </div>
+  </div>
 
-.slide {
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.1);
-  transition:1s;
-}
+  <!-- SLIDE 2: DOA -->
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519682337058-a94d519337bc');">
+    <div class="overlay">
+      <div class="content">
+        <h1>Hidup Doa</h1>
+        <p>Membangun relasi dengan Tuhan</p>
+      </div>
+    </div>
+  </div>
 
-.slide.active {
-  opacity:1;
-  transform:scale(1);
+  <!-- SLIDE 3: PANGGILAN -->
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65');">
+    <div class="overlay">
+      <div class="content">
+        <h1>Temukan Panggilanmu</h1>
+        <p>Ikuti kehendak Tuhan dalam hidupmu</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: KOMUNITAS -->
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df');">
+    <div class="overlay">
+      <div class="content">
+        <h1>Hidup Bersama</h1>
+        <p>Dalam persaudaraan dan pelayanan</p>
+      </div>
+    </div>
+  </div>
+
+</div>
 }
 
 /* OVERLAY */
