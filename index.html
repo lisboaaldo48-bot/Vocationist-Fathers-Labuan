@@ -6,79 +6,157 @@
 
 <title>Vocationist Fathers Indonesia</title>
 
-<!-- Google Font Modern -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background: url('https://images.unsplash.com/photo-1507692049790-de58290a4334') no-repeat center center/cover;
-    color:white;
+margin:0;
+font-family:'Poppins', sans-serif;
+color:white;
 }
 
 /* NAVBAR */
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(0,0,0,0.7);
-    padding:15px;
-    text-align:center;
-    z-index:999;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+padding:15px;
+text-align:center;
+z-index:999;
 }
 
 nav a{
-    color:white;
-    margin:15px;
-    text-decoration:none;
-    font-weight:600;
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:600;
 }
 
-/* SECTION */
-section{
-    min-height:100vh;
-    padding:100px 20px;
-    background:rgba(0,0,0,0.6);
-}
-
-/* HERO */
+/* HERO SLIDER */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background-size:cover;
+background-position:center;
+animation:slide 20s infinite;
+}
+
+@keyframes slide{
+0%{background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334');}
+33%{background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');}
+66%{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba');}
+100%{background-image:url('https://images.unsplash.com/photo-1507692049790-de58290a4334');}
 }
 
 .hero h1{
-    font-size:50px;
+font-size:50px;
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:10px;
 }
 
-.hero p{
-    font-size:20px;
+section{
+padding:100px 20px;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e');
+background-size:cover;
 }
 
 /* CARD */
 .card{
-    background:white;
-    color:black;
-    padding:25px;
-    border-radius:10px;
-    margin:20px auto;
-    max-width:900px;
+background:white;
+color:black;
+padding:30px;
+border-radius:12px;
+max-width:1000px;
+margin:auto;
+margin-bottom:30px;
+}
+
+/* TIMELINE */
+.timeline{
+position:relative;
+max-width:1000px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#ffc107;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+
+.container{
+padding:20px;
+position:relative;
+width:50%;
+}
+
+.container.left{left:0;}
+.container.right{left:50%;}
+
+.content{
+background:white;
+color:black;
+padding:20px;
+border-radius:10px;
+}
+
+.container::before{
+content:'';
+position:absolute;
+width:25px;
+height:25px;
+right:-13px;
+background:#ffc107;
+border-radius:50%;
+top:15px;
+}
+
+.right::before{
+left:-13px;
+}
+
+/* ICON */
+.icon{
+font-size:30px;
+}
+
+/* FORM */
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+padding:12px;
+width:100%;
+background:#004aad;
+color:white;
+border:none;
 }
 
 /* ANIMASI */
 .fade{
-    animation:fadeIn 2s ease;
+animation:fadeIn 1.5s;
 }
 
 @keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
 }
+
 </style>
 </head>
 
@@ -86,114 +164,102 @@ section{
 
 <!-- NAVBAR -->
 <nav>
-    <a href="#beranda">Beranda</a>
-    <a href="#tentang">Tentang</a>
-    <a href="#formasi">Formasi</a>
-    <a href="#pendaftaran">Pendaftaran</a>
+<a href="#beranda">Beranda</a>
+<a href="#tentang">Tentang</a>
+<a href="#formasi">Formasi</a>
+<a href="#pendaftaran">Pendaftaran</a>
 </nav>
 
 <!-- BERANDA -->
-<section id="beranda" class="hero fade">
-    <h1>Temukan Panggilanmu</h1>
-    <p>Hidup untuk Tuhan dan Gereja</p>
+<section id="beranda" class="hero">
+<h1>Temukan Panggilanmu Bersama Tuhan</h1>
 </section>
 
 <!-- TENTANG -->
-<section id="tentang" class="fade">
+<section id="tentang">
+<div class="card fade">
 
-<div class="card">
-<h2>Tentang Kongregasi Vocationist</h2>
+<h2>Tentang Kongregasi</h2>
 
 <p>
-Biara Vocationist, atau yang secara resmi dikenal sebagai <b>Societas Divinarum Vocationum (Serikat Panggilan Ilahi)</b>, memiliki sejarah yang berakar pada awal abad ke-20 di Italia. Kongregasi ini didirikan dengan misi khusus untuk membina panggilan religius, terutama di kalangan mereka yang kurang mampu secara ekonomi.
-</p>
-
-<h3>1. Pendiri: Santo Justinus Maria Russolillo</h3>
-<p>
-Kongregasi ini didirikan oleh <b>Santo Justinus Maria Russolillo (1891–1955)</b>, seorang imam paroki di Pianura, Napoli, Italia. Sejak masa mudanya, beliau memiliki perhatian besar terhadap kaum muda yang terpanggil menjadi imam atau biarawan tetapi tidak memiliki biaya untuk masuk seminari.
+Biara Vocationist (Societas Divinarum Vocationum) didirikan oleh Santo Justinus Maria Russolillo di Italia tahun 1920.
 </p>
 
 <p>
-Pada tanggal <b>20 September 1920</b>, ia secara resmi mendirikan komunitas pertama di Pianura. Beliau kemudian dikanonisasi sebagai Santo oleh Gereja Katolik pada tahun 2022.
+Misi utama kongregasi ini adalah membantu setiap orang menemukan panggilan hidupnya dari Tuhan.
 </p>
 
-<h3>2. Visi "Vocationarium"</h3>
-<p>
-Salah satu inovasi terbesar dalam sejarah kongregasi ini adalah konsep <b>Vocationarium</b>, yaitu rumah pembinaan khusus bagi mereka yang ingin mencari kehendak Tuhan dalam hidupnya.
-</p>
-
-<ul>
-<li>Tempat bagi mereka yang masih ragu akan panggilan hidup</li>
-<li>Membantu yang belum siap secara akademis</li>
-<li>Mendampingi calon imam, biarawan, maupun awam</li>
-</ul>
-
-<h3>3. Pengakuan Gereja</h3>
-<p>
-Kongregasi ini mendapat persetujuan keuskupan pada tahun <b>1927</b> dan kemudian menerima <b>Pengakuan Kepausan (Decretum Laudis)</b> pada <b>3 Januari 1948</b> dari Paus Pius XII, yang membuka jalan bagi perkembangan internasional.
-</p>
-
-<h3>4. Cabang Perempuan</h3>
-<p>
-Selain biara untuk para Frater, didirikan juga <b>Suster-Suster Vocationist</b> pada tahun <b>1921</b>, yang memiliki misi yang sama: mendukung panggilan hidup bakti melalui doa dan pelayanan.
-</p>
-
-<h3>5. Kehadiran di Dunia & Indonesia</h3>
-<p>
-Kongregasi ini telah berkembang ke berbagai negara seperti Brasil, Amerika Serikat, Nigeria, Australia, Inggris, dan Asia.
-</p>
-
-<p>
-Di Indonesia, para Vocationist melayani melalui:
-</p>
-
-<ul>
-<li>Pelayanan paroki</li>
-<li>Pendampingan kaum muda</li>
-<li>Pembinaan calon imam</li>
-<li>Pengelolaan Vocationary dan pendidikan</li>
-</ul>
-
-<h3>Spiritualitas</h3>
-<p>
-Semangat utama kongregasi ini dirangkum dalam moto:
-</p>
-
-<p><b>"Ego Volo Te Beatum"</b> — Aku ingin engkau bahagia/kudus.</p>
-
-<p>
-Setiap manusia diyakini memiliki panggilan khusus dari Tuhan yang harus ditemukan dan dikembangkan.
-</p>
+<p><b>"Ego Volo Te Beatum"</b></p>
 
 </div>
-
 </section>
 
 <!-- FORMASI -->
-<section id="formasi" class="fade">
+<section id="formasi">
+
 <div class="card">
-<h2>Rumah Formasi</h2>
-<ul>
-<li>KPA - Labuan Bajo</li>
-<li>Aspirant - Maumere</li>
-<li>Postulan & Filsafat - Maumere</li>
-<li>Novisiat - Ruteng</li>
-</ul>
+<h2 style="text-align:center;">Tahapan Formasi Imam</h2>
 </div>
+
+<div class="timeline">
+
+<div class="container left">
+<div class="content">
+<div class="icon">👣</div>
+<h3>1. Tahap Awal</h3>
+<p>KPA, Aspiran, Apprenticeship, Discipleship</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<div class="icon">🙏</div>
+<h3>2. Formasi Dasar</h3>
+<p>Postulan & Novisiat (Kaul Pertama)</p>
+</div>
+</div>
+
+<div class="container left">
+<div class="content">
+<div class="icon">📖</div>
+<h3>3. Studi & Pastoral</h3>
+<p>Filsafat, Teologi, Pelayanan Umat</p>
+</div>
+</div>
+
+<div class="container right">
+<div class="content">
+<div class="icon">⛪</div>
+<h3>4. Tahbisan</h3>
+<p>Diakon → Imam</p>
+</div>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Penjelasan Lengkap</h3>
+
+<p><b>Tahap Awal:</b> Adaptasi, pembinaan awal, dan pengenalan hidup religius.</p>
+<p><b>Formasi Dasar:</b> Pendalaman hidup rohani dan kaul religius.</p>
+<p><b>Formasi Lanjut:</b> Studi filsafat, teologi, dan pelayanan pastoral.</p>
+<p><b>Tahbisan:</b> Menjadi Diakon dan akhirnya Imam.</p>
+
+</div>
+
 </section>
 
 <!-- PENDAFTARAN -->
-<section id="pendaftaran" class="fade">
+<section id="pendaftaran">
 <div class="card">
+
 <h2>Pendaftaran</h2>
 
-<input type="text" placeholder="Nama" style="width:100%;padding:10px;margin:10px 0;">
-<input type="text" placeholder="No HP" style="width:100%;padding:10px;margin:10px 0;">
-<textarea placeholder="Motivasi" style="width:100%;padding:10px;margin:10px 0;"></textarea>
+<input type="text" placeholder="Nama">
+<input type="text" placeholder="No HP">
+<textarea placeholder="Motivasi"></textarea>
 
-<button style="padding:12px;background:#004aad;color:white;border:none;width:100%;">
-Kirim
-</button>
+<button>Kirim</button>
 
 </div>
 </section>
