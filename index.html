@@ -6,210 +6,251 @@
 
 <title>Vocationist Fathers Indonesia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-body {
+body{
   margin:0;
   font-family:'Poppins', sans-serif;
-  background:#f4f4f4;
-}
-
-/* HEADER */
-.header {
-  background:linear-gradient(to right,#0d47a1,#1976d2);
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
+  background-size:cover;
+  background-attachment:fixed;
   color:white;
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.header img {
-  height:70px;
 }
 
 /* NAVBAR */
-nav {
-  background:#c9a000;
-  padding:10px;
-}
-nav ul {
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-}
-nav li {
-  margin-right:20px;
-  position:relative;
-}
-nav a {
-  text-decoration:none;
-  color:white;
-  font-weight:500;
-}
-
-/* DROPDOWN */
-nav li:hover ul {
-  display:block;
-}
-nav ul ul {
-  display:none;
-  position:absolute;
-  background:#333;
-  top:30px;
-  padding:10px;
-}
-nav ul ul li {
-  margin:0;
-}
-nav ul ul a {
-  color:white;
-}
-
-/* HERO */
-.hero {
-  height:300px;
-  background:url('https://images.unsplash.com/photo-1507692049790-de58290a4334') center/cover;
-  color:white;
-  display:flex;
-  align-items:center;
-  padding-left:40px;
-}
-.hero h1 {
-  font-size:40px;
-}
-
-/* LAYOUT */
-.container {
-  display:flex;
-  padding:20px;
-}
-
-/* CONTENT */
-.content {
-  flex:3;
-  margin-right:20px;
-}
-.card {
-  background:white;
-  padding:20px;
-  margin-bottom:20px;
-  border-radius:5px;
-}
-
-/* SIDEBAR */
-.sidebar {
-  flex:1;
-}
-.sidebar .card {
-  background:#fafafa;
-}
-
-/* VIDEO */
-iframe {
+nav{
+  position:fixed;
   width:100%;
-  height:200px;
-}
-
-/* FOOTER */
-footer {
-  background:#0d47a1;
-  color:white;
+  background:rgba(0,0,0,0.7);
   text-align:center;
   padding:15px;
+  z-index:1000;
+}
+nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:500;
+}
+nav a:hover{
+  color:gold;
+}
+
+/* SLIDER */
+.hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.1);
+  transition:1s;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+.overlay{
+  background:rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+}
+
+.text{
+  position:absolute;
+  top:50%;
+  left:10%;
+  transform:translateY(-50%);
+  animation:fadeUp 1.5s ease;
+}
+
+.text h1{
+  font-family:'Playfair Display', serif;
+  font-size:55px;
+}
+
+.text p{
+  font-size:20px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(50px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* SECTION */
+section{
+  padding:80px 20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.card{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+/* FORM */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+}
+
+button{
+  background:gold;
+  border:none;
+  padding:12px;
+  width:100%;
+  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div>
-    <h2>VOCATIONIST</h2>
-    <small>Keluarga Vokasionis Indonesia</small>
-  </div>
-  <img src="sdv.png">
-</div>
-
-<!-- NAV -->
+<!-- MENU -->
 <nav>
-<ul>
-  <li><a href="#">Beranda</a></li>
-
-  <li><a href="#">Tentang</a>
-    <ul>
-      <li><a href="#">Sejarah</a></li>
-      <li><a href="#">Pendiri</a></li>
-    </ul>
-  </li>
-
-  <li><a href="#">Formasi</a>
-    <ul>
-      <li><a href="#">Labuan Bajo</a></li>
-      <li><a href="#">Maumere</a></li>
-      <li><a href="#">Ruteng</a></li>
-    </ul>
-  </li>
-
-  <li><a href="#">Multimedia</a></li>
-  <li><a href="#">Pendaftaran</a></li>
-</ul>
+  <a href="#beranda">Beranda</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#formasi">Formasi</a>
+  <a href="#video">Video</a>
+  <a href="#daftar">Pendaftaran</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Selamat Datang</h1>
-</div>
+<!-- SLIDER -->
+<section class="hero" id="beranda">
 
-<!-- MAIN -->
+  <!-- YESUS -->
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba');">
+    <div class="overlay"></div>
+    <div class="text">
+      <h1>Ikuti Yesus</h1>
+      <p>Menyerahkan hidup untuk Tuhan</p>
+    </div>
+  </div>
+
+  <!-- IMAM -->
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1604537466573-5e94508fd243');">
+    <div class="overlay"></div>
+    <div class="text">
+      <h1>Menjadi Imam</h1>
+      <p>Melayani umat dengan kasih</p>
+    </div>
+  </div>
+
+  <!-- GEREJA -->
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
+    <div class="overlay"></div>
+    <div class="text">
+      <h1>Hidup dalam Gereja</h1>
+      <p>Berjalan bersama umat Allah</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+<div class="container">
+<div class="card">
+<h2>Tentang Kongregasi</h2>
+<p>Kongregasi Vocationist didirikan oleh Santo Yustinus Maria Russolillo untuk melayani panggilan hidup religius dan imamat.</p>
+</div>
+</div>
+</section>
+
+<!-- FORMASI -->
+<section id="formasi">
 <div class="container">
 
-  <!-- CONTENT -->
-  <div class="content">
-
-    <div class="card">
-      <h2>Sejarah Kongregasi</h2>
-      <p>Kongregasi ini didirikan oleh Santo Yustinus Maria Russolillo. Tujuannya untuk melayani panggilan hidup religius dan imamat.</p>
-    </div>
-
-    <div class="card">
-      <h2>Berita</h2>
-      <p>• Retret panggilan</p>
-      <p>• Seminar iman</p>
-      <p>• Kegiatan komunitas</p>
-    </div>
-
-    <div class="card">
-      <h2>Video Panggilan</h2>
-      <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U"></iframe>
-    </div>
-
-  </div>
-
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-
-    <div class="card">
-      <h3>Informasi</h3>
-      <p>Novisiat: Ruteng</p>
-      <p>Formasi: Maumere</p>
-    </div>
-
-    <div class="card">
-      <h3>Kontak</h3>
-      <p>WhatsApp: 08xxxxxxx</p>
-    </div>
-
-  </div>
-
+<div class="card">
+<h3>KPA – Labuan Bajo</h3>
+<p>Kelas Persiapan Awal bagi calon panggilan.</p>
 </div>
 
-<!-- FOOTER -->
-<footer>
-© 2026 Vocationist Fathers Indonesia
-</footer>
+<div class="card">
+<h3>Maumere</h3>
+<p>Aspirant, Discipleship, Postulan, Filsafat & Teologi.</p>
+</div>
+
+<div class="card">
+<h3>Novisiat – Ruteng</h3>
+<p>Pembinaan hidup religius secara mendalam.</p>
+</div>
+
+</div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+<div class="container">
+<div class="card">
+<h2>Video Panggilan</h2>
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/ysz5S6PUM-U"></iframe>
+
+</div>
+</div>
+</section>
+
+<!-- PENDAFTARAN -->
+<section id="daftar">
+<div class="container">
+<div class="card">
+
+<h2>Pendaftaran</h2>
+
+<input type="text" id="nama" placeholder="Nama">
+<input type="text" id="hp" placeholder="Nomor HP">
+<textarea id="motivasi" placeholder="Motivasi"></textarea>
+
+<button onclick="kirimWA()">Kirim</button>
+
+</div>
+</div>
+</section>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let i=0;
+
+setInterval(()=>{
+  slides[i].classList.remove('active');
+  i=(i+1)%slides.length;
+  slides[i].classList.add('active');
+},4000);
+
+function kirimWA(){
+  let nama=document.getElementById('nama').value;
+  let hp=document.getElementById('hp').value;
+  let motivasi=document.getElementById('motivasi').value;
+
+  let nomor="628123456789";
+
+  let pesan=`PENDAFTARAN%0ANama:${nama}%0AHP:${hp}%0AMotivasi:${motivasi}`;
+
+  window.open(`https://wa.me/${nomor}?text=${pesan}`);
+}
+</script>
 
 </body>
 </html>
