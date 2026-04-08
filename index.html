@@ -6,251 +6,197 @@
 
 <title>Vocationist Fathers Indonesia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<!-- Google Font Modern -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
-  background-size:cover;
-  background-attachment:fixed;
-  color:white;
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background: url('https://images.unsplash.com/photo-1507692049790-de58290a4334') no-repeat center center/cover;
+    color:white;
 }
 
 /* NAVBAR */
 nav{
-  position:fixed;
-  width:100%;
-  background:rgba(0,0,0,0.7);
-  text-align:center;
-  padding:15px;
-  z-index:1000;
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.7);
+    padding:15px;
+    text-align:center;
+    z-index:999;
 }
+
 nav a{
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:500;
-}
-nav a:hover{
-  color:gold;
-}
-
-/* SLIDER */
-.hero{
-  height:100vh;
-  position:relative;
-  overflow:hidden;
-}
-
-.slide{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.1);
-  transition:1s;
-}
-
-.slide.active{
-  opacity:1;
-  transform:scale(1);
-}
-
-.overlay{
-  background:rgba(0,0,0,0.5);
-  width:100%;
-  height:100%;
-}
-
-.text{
-  position:absolute;
-  top:50%;
-  left:10%;
-  transform:translateY(-50%);
-  animation:fadeUp 1.5s ease;
-}
-
-.text h1{
-  font-family:'Playfair Display', serif;
-  font-size:55px;
-}
-
-.text p{
-  font-size:20px;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(50px);}
-  to{opacity:1; transform:translateY(0);}
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-weight:600;
 }
 
 /* SECTION */
 section{
-  padding:80px 20px;
+    min-height:100vh;
+    padding:100px 20px;
+    background:rgba(0,0,0,0.6);
 }
 
-.container{
-  max-width:1000px;
-  margin:auto;
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+/* CARD */
 .card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(10px);
-  padding:25px;
-  border-radius:10px;
-  margin-bottom:20px;
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:10px;
+    margin:20px auto;
+    max-width:900px;
 }
 
-/* FORM */
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:none;
+/* ANIMASI */
+.fade{
+    animation:fadeIn 2s ease;
 }
 
-button{
-  background:gold;
-  border:none;
-  padding:12px;
-  width:100%;
-  font-weight:bold;
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
+<!-- NAVBAR -->
 <nav>
-  <a href="#beranda">Beranda</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#formasi">Formasi</a>
-  <a href="#video">Video</a>
-  <a href="#daftar">Pendaftaran</a>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#formasi">Formasi</a>
+    <a href="#pendaftaran">Pendaftaran</a>
 </nav>
 
-<!-- SLIDER -->
-<section class="hero" id="beranda">
-
-  <!-- YESUS -->
-  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba');">
-    <div class="overlay"></div>
-    <div class="text">
-      <h1>Ikuti Yesus</h1>
-      <p>Menyerahkan hidup untuk Tuhan</p>
-    </div>
-  </div>
-
-  <!-- IMAM -->
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1604537466573-5e94508fd243');">
-    <div class="overlay"></div>
-    <div class="text">
-      <h1>Menjadi Imam</h1>
-      <p>Melayani umat dengan kasih</p>
-    </div>
-  </div>
-
-  <!-- GEREJA -->
-  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
-    <div class="overlay"></div>
-    <div class="text">
-      <h1>Hidup dalam Gereja</h1>
-      <p>Berjalan bersama umat Allah</p>
-    </div>
-  </div>
-
+<!-- BERANDA -->
+<section id="beranda" class="hero fade">
+    <h1>Temukan Panggilanmu</h1>
+    <p>Hidup untuk Tuhan dan Gereja</p>
 </section>
 
 <!-- TENTANG -->
-<section id="tentang">
-<div class="container">
+<section id="tentang" class="fade">
+
 <div class="card">
-<h2>Tentang Kongregasi</h2>
-<p>Kongregasi Vocationist didirikan oleh Santo Yustinus Maria Russolillo untuk melayani panggilan hidup religius dan imamat.</p>
+<h2>Tentang Kongregasi Vocationist</h2>
+
+<p>
+Biara Vocationist, atau yang secara resmi dikenal sebagai <b>Societas Divinarum Vocationum (Serikat Panggilan Ilahi)</b>, memiliki sejarah yang berakar pada awal abad ke-20 di Italia. Kongregasi ini didirikan dengan misi khusus untuk membina panggilan religius, terutama di kalangan mereka yang kurang mampu secara ekonomi.
+</p>
+
+<h3>1. Pendiri: Santo Justinus Maria Russolillo</h3>
+<p>
+Kongregasi ini didirikan oleh <b>Santo Justinus Maria Russolillo (1891–1955)</b>, seorang imam paroki di Pianura, Napoli, Italia. Sejak masa mudanya, beliau memiliki perhatian besar terhadap kaum muda yang terpanggil menjadi imam atau biarawan tetapi tidak memiliki biaya untuk masuk seminari.
+</p>
+
+<p>
+Pada tanggal <b>20 September 1920</b>, ia secara resmi mendirikan komunitas pertama di Pianura. Beliau kemudian dikanonisasi sebagai Santo oleh Gereja Katolik pada tahun 2022.
+</p>
+
+<h3>2. Visi "Vocationarium"</h3>
+<p>
+Salah satu inovasi terbesar dalam sejarah kongregasi ini adalah konsep <b>Vocationarium</b>, yaitu rumah pembinaan khusus bagi mereka yang ingin mencari kehendak Tuhan dalam hidupnya.
+</p>
+
+<ul>
+<li>Tempat bagi mereka yang masih ragu akan panggilan hidup</li>
+<li>Membantu yang belum siap secara akademis</li>
+<li>Mendampingi calon imam, biarawan, maupun awam</li>
+</ul>
+
+<h3>3. Pengakuan Gereja</h3>
+<p>
+Kongregasi ini mendapat persetujuan keuskupan pada tahun <b>1927</b> dan kemudian menerima <b>Pengakuan Kepausan (Decretum Laudis)</b> pada <b>3 Januari 1948</b> dari Paus Pius XII, yang membuka jalan bagi perkembangan internasional.
+</p>
+
+<h3>4. Cabang Perempuan</h3>
+<p>
+Selain biara untuk para Frater, didirikan juga <b>Suster-Suster Vocationist</b> pada tahun <b>1921</b>, yang memiliki misi yang sama: mendukung panggilan hidup bakti melalui doa dan pelayanan.
+</p>
+
+<h3>5. Kehadiran di Dunia & Indonesia</h3>
+<p>
+Kongregasi ini telah berkembang ke berbagai negara seperti Brasil, Amerika Serikat, Nigeria, Australia, Inggris, dan Asia.
+</p>
+
+<p>
+Di Indonesia, para Vocationist melayani melalui:
+</p>
+
+<ul>
+<li>Pelayanan paroki</li>
+<li>Pendampingan kaum muda</li>
+<li>Pembinaan calon imam</li>
+<li>Pengelolaan Vocationary dan pendidikan</li>
+</ul>
+
+<h3>Spiritualitas</h3>
+<p>
+Semangat utama kongregasi ini dirangkum dalam moto:
+</p>
+
+<p><b>"Ego Volo Te Beatum"</b> — Aku ingin engkau bahagia/kudus.</p>
+
+<p>
+Setiap manusia diyakini memiliki panggilan khusus dari Tuhan yang harus ditemukan dan dikembangkan.
+</p>
+
 </div>
-</div>
+
 </section>
 
 <!-- FORMASI -->
-<section id="formasi">
-<div class="container">
-
+<section id="formasi" class="fade">
 <div class="card">
-<h3>KPA – Labuan Bajo</h3>
-<p>Kelas Persiapan Awal bagi calon panggilan.</p>
-</div>
-
-<div class="card">
-<h3>Maumere</h3>
-<p>Aspirant, Discipleship, Postulan, Filsafat & Teologi.</p>
-</div>
-
-<div class="card">
-<h3>Novisiat – Ruteng</h3>
-<p>Pembinaan hidup religius secara mendalam.</p>
-</div>
-
-</div>
-</section>
-
-<!-- VIDEO -->
-<section id="video">
-<div class="container">
-<div class="card">
-<h2>Video Panggilan</h2>
-
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/ysz5S6PUM-U"></iframe>
-
-</div>
+<h2>Rumah Formasi</h2>
+<ul>
+<li>KPA - Labuan Bajo</li>
+<li>Aspirant - Maumere</li>
+<li>Postulan & Filsafat - Maumere</li>
+<li>Novisiat - Ruteng</li>
+</ul>
 </div>
 </section>
 
 <!-- PENDAFTARAN -->
-<section id="daftar">
-<div class="container">
+<section id="pendaftaran" class="fade">
 <div class="card">
-
 <h2>Pendaftaran</h2>
 
-<input type="text" id="nama" placeholder="Nama">
-<input type="text" id="hp" placeholder="Nomor HP">
-<textarea id="motivasi" placeholder="Motivasi"></textarea>
+<input type="text" placeholder="Nama" style="width:100%;padding:10px;margin:10px 0;">
+<input type="text" placeholder="No HP" style="width:100%;padding:10px;margin:10px 0;">
+<textarea placeholder="Motivasi" style="width:100%;padding:10px;margin:10px 0;"></textarea>
 
-<button onclick="kirimWA()">Kirim</button>
+<button style="padding:12px;background:#004aad;color:white;border:none;width:100%;">
+Kirim
+</button>
 
-</div>
 </div>
 </section>
-
-<script>
-let slides = document.querySelectorAll('.slide');
-let i=0;
-
-setInterval(()=>{
-  slides[i].classList.remove('active');
-  i=(i+1)%slides.length;
-  slides[i].classList.add('active');
-},4000);
-
-function kirimWA(){
-  let nama=document.getElementById('nama').value;
-  let hp=document.getElementById('hp').value;
-  let motivasi=document.getElementById('motivasi').value;
-
-  let nomor="628123456789";
-
-  let pesan=`PENDAFTARAN%0ANama:${nama}%0AHP:${hp}%0AMotivasi:${motivasi}`;
-
-  window.open(`https://wa.me/${nomor}?text=${pesan}`);
-}
-</script>
 
 </body>
 </html>
